@@ -25,6 +25,7 @@ model Task {
   userId    Int
   priority  EnumPriority @default(MEDIUM)
   deadline  DateTime?
+  description String?
 }
 
 enum EnumPriority {

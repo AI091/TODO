@@ -23,7 +23,6 @@ router.post("/login", async (req: Request, res: Response) => {
     if (!user) {
         return res.status(404).json({ message: "User not found" });
     }
-    // const hashedPassword = await bcrypt.hash(password, 10);
     const isPasswordValid = await bcrypt.compare(password, user.password); 
     if (!isPasswordValid) {
         return res.status(401).json({ message: "Invalid Credentials" });
@@ -57,7 +56,6 @@ router.post("/register", async (req: Request, res: Response) => {
         
         return res.status(200).json({ 
             message: "User created successfully" 
-            , user 
     });
     }
 });
